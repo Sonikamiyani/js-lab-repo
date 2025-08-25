@@ -48,3 +48,26 @@ let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticate
 
 
 console.log("Authentication Status:", authenticationStatus);
+
+let Role = "enrolled member";  
+let accessMessage;
+
+switch (Role) {
+    case "employee":
+        accessMessage = "Access granted: You have full access to Dietary Services.";
+        break;
+    case "enrolled member":
+        accessMessage = "Access granted: You have full access to Dietary Services and one-on-one interaction with a dietician.";
+        break;
+    case "subscriber":
+        accessMessage = "Partial access granted: You can access limited features of the Dietary Services.";
+        break;
+    case "non-subscriber":
+        accessMessage = "Access denied: Please enroll or subscribe to access Dietary Services.";
+        break;
+    default:
+        accessMessage = "Invalid role: Please enter a valid role (Employee, Enrolled Member, Subscriber, or Non-Subscriber).";
+}
+
+console.log("User Role:", userRole);
+console.log(accessMessage);
